@@ -12,7 +12,7 @@ export class ThirdComponentComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   constructor(private messageService: MessageService) {
-    this.subscription = this.messageService.getMessage().subscribe(message => {
+    this.subscription = this.messageService.getMagazine2().subscribe(message => {
       this.message = message;
     });
   }

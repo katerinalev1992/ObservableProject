@@ -4,17 +4,26 @@ import {Observable} from "rxjs/internal/Observable";
 
 @Injectable()
 export class MessageService {
-  private subject = new Subject<any>();
+  private magazine1 = new Subject<any>();
+  private magazine2 = new Subject<any>();
 
-  sendMessage(message: string): void {
-    this.subject.next({ text: message });
+  sendMagazine1(message: string): void {
+    this.magazine1.next({ text: message });
+  }
+
+  sendMagazine2(message: string): void {
+    this.magazine2.next({ text: message });
   }
 
   clearMessage(): void {
-    this.subject.next();
+    this.magazine1.next();
   }
 
-  getMessage(): Observable<any> {
-    return this.subject.asObservable();
+  getMagazine1(): Observable<any> {
+    return this.magazine1.asObservable();
+  }
+
+  getMagazine2(): Observable<any> {
+    return this.magazine2.asObservable();
   }
 }

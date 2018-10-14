@@ -13,7 +13,7 @@ export class ForthComponentComponent implements OnInit, OnDestroy {
 
   constructor(private messageService: MessageService) {
     // подписываемся на сообщения
-    this.subscription = this.messageService.getMessage().subscribe(message => {
+    this.subscription = this.messageService.getMagazine1().subscribe(message => {
       this.message = message;
     });
   }

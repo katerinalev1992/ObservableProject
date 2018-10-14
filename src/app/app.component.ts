@@ -12,9 +12,15 @@ export class AppComponent {
 
   constructor(private messageService: MessageService) {}
 
-  sendMessage(): void {
+  sendMagazine1(): void {
     // отправляем сообщения ко всем кто подписался через observable subject
-    this.messageService.sendMessage('Message from Root child to subscribed components!');
+    this.messageService.sendMagazine1('New your magazine');
+  }
+
+
+  sendMagazine2(): void {
+    // отправляем сообщения ко всем кто подписался через observable subject
+    this.messageService.sendMagazine2('Hacker magazine');
   }
 
   clearMessage(): void {
